@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const stPrice = require("./scraper");
 
@@ -11,6 +12,6 @@ app.get("/currPrice/:syb", async (req, res) => {
   await res.json({currPrice: currPrice});
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running");
 })
