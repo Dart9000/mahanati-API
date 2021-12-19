@@ -4,6 +4,10 @@ const stPrice = require("./scraper");
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Working");
+})
+
 app.get("/currPrice/:syb", async (req, res) => {
 
   const syb = req.params.syb;
