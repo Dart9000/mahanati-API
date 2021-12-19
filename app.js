@@ -13,7 +13,7 @@ app.get("/currPrice/:syb", async (req, res) => {
   const syb = req.params.syb;
   const url = `https://www.google.com/finance/quote/${syb}:NSE`
   const currPrice = await stPrice.run(url);
-  await res.json({currPrice: currPrice});
+  res.json({currPrice: currPrice});
 });
 
 app.listen(process.env.PORT || 3000, () => {
