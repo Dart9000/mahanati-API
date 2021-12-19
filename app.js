@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require('express');
 const stPrice = require("./scraper");
+const puppeteer = require('puppeteer');
 
 const app = express();
 
@@ -9,7 +10,6 @@ app.get("/", (req, res) => {
 })
 
 app.get("/currPrice/:syb", async (req, res) => {
-
   const syb = req.params.syb;
   const url = `https://www.google.com/finance/quote/${syb}:NSE`
   const currPrice = await stPrice.run(url);
