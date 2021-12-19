@@ -9,7 +9,7 @@ async function run(url) {
   console.log("page Created");
 
 
-  await page.goto(url, {waitUntil: 'domcontentloaded', timeout: 0});
+  await page.goto(url, {timeout: 0});
 
   console.log("On the page");
 
