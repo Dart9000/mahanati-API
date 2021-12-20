@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 
 app.get("/currPrice/:syb", async (req, res) => {
   const syb = req.params.syb;
-  const url = `https://www.google.com/finance/quote/${syb}:NSE`
+  const url = `https://www.google.com/finance/quote/${syb}-INR`
   const currPrice = await stPrice.run(url);
   res.json({currPrice: currPrice});
 });
